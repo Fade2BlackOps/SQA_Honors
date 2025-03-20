@@ -9,8 +9,10 @@ public class Person {
     private String email;
     private String address;
 
-    // Constructor
+    // Constructors
     // -------------------------------------------------------------------------
+    public Person() {} // empty parameterless constructor
+
     public Person(String name, String phoneNumber, String email, String address) {
         this.name = name;
         this.phoneNumber = phoneNumber;
