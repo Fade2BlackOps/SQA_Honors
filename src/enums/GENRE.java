@@ -1,6 +1,7 @@
 package enums;
 
 public enum GENRE {
+    None,
     FICTION,
     FANTASY,
     ROMANCE,
