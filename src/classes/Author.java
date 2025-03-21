@@ -2,7 +2,7 @@ package classes;
 
 public class Author extends Person {
 
-    // Constructor
+    // Constructors
     // -------
     public Author() {}
 
