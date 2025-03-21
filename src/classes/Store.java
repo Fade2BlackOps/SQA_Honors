@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Store {
     
@@ -10,7 +11,7 @@ public class Store {
     private String address;
     private String phoneNumber;
     private String businessLicense;
-    private HashMap<Book, Integer> inventory; // Maps book ISBN to quantity in stock
+    private Map<Book, Integer> inventory; // Maps book ISBN to quantity in stock
 
     // Constructors
     // ----------------------
@@ -39,7 +40,7 @@ public class Store {
     public String getBusinessLicense() { return businessLicense; }
     public void setBusinessLicense(String businessLicense) { this.businessLicense = businessLicense; }
 
-    public HashMap<Book, Integer> getInventory() { return inventory; }
+    public Map<Book, Integer> getInventory() { return inventory; }
     public void setInventory(HashMap<Book, Integer> inventory) { this.inventory = inventory; }
 
     
@@ -101,7 +102,7 @@ public class Store {
     /**
      * Simulates a store ordering physical books to stock.
      */
-    public void orderBooks(Book book, int quantity) {
+    public void orderBooks(Paperback book, int quantity) {
         System.out.println("Ordering " + quantity + " copies of book with ISBN " + book.getIsbn() + " for the store.");
         addBookToStock(book, quantity);
     }
