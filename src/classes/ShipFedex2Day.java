@@ -15,7 +15,11 @@ public class ShipFedex2Day implements ShippingChoice {
     // Methods
     // -------------------------------------------------------------------------
 
-
+    /**
+     * Simulates the process of shipping an order using FedEx 2-Day.
+     * This method would typically involve updating the order status and
+     * notifying the customer about the shipping details.
+     */
     @Override
     public void shipOrder() {
         // Simulate the process of shipping an order with FedEx 2-Day

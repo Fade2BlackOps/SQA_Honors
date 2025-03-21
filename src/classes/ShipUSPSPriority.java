@@ -17,7 +17,11 @@ public class ShipUSPSPriority implements ShippingChoice {
     // Methods
     // -------------------------------------------------------------------------
 
-
+    /**
+     * Simulates the process of shipping an order using USPS Priority.
+     * This method would typically involve updating the order status and
+     * notifying the customer about the shipping details.
+     */
     @Override
     public void shipOrder() {
         // Simulate the process of shipping an order with USPS Priority
