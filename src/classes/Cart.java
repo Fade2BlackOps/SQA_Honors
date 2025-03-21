@@ -71,5 +71,27 @@ public class Cart {
         }
         return totalPrice;
     }
+
+    /**
+     * Displays the contents of the cart.
+     */
+    public void displayCartContents() {
+        System.out.println("Cart Contents:");
+        for (Map.Entry<Book, Integer> entry : items.entrySet()) {
+            Book book = entry.getKey();
+            int quantity = entry.getValue();
+            System.out.println("ISBN: " + book.getIsbn() + ", Title: " + book.getTitle() + ", Quantity: " + quantity);
+        }
+        System.out.println("Total Price: $" + calculateTotalPrice());
+    }
+
+    /**
+     * Clears the cart.
+     */
+    public void clearCart() {
+        items.clear();
+        totalPrice = 0.00f;
+        System.out.println("Cart has been cleared.");
+    }
     
 }
