@@ -2,7 +2,7 @@ package classes;
 
 public class Customer  extends Person {
 
-    // Constructor
+    // Constructors
     // ----------
     public Customer() {} // empty constructor
 

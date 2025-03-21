@@ -58,6 +58,7 @@ public class Book {
 
     // Actually, Book doesn't have any methods yet, so...
     // TODO: Determine if Book class needs any methods.
+    // TODO: Add openBook method which opens a book's file path
 
 }
 
