@@ -24,6 +24,6 @@ public class EBook extends Book {
     public void setFileFormat(String fileFormat) { this.fileFormat = fileFormat; }
 
     public float getFileSize() { return fileSize; }
-    public void setFileSize(float fileSize) { this.fileSize = fileSize;}
+    public void setFileSize(float fileSize) { this.fileSize = fileSize; }
     
 }
