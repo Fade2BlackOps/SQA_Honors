@@ -54,9 +54,7 @@ public abstract class Person {
      */
     public void readBook(Book book) {
         System.out.println(name + " is reading a book");
-        // TODO: Actually print the book contents into the terminal. (Stretch goal for more interactive media)
-        // TODO: Open file for book in default program for file type.
-        // // ^ Call a function inside the "book" to open that file; use the file's path.
+        book.openBook(book.getFilePath()); // Call the read method of the Book class
     }
 
 }
