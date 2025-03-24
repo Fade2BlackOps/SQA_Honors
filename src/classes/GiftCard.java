@@ -18,6 +18,11 @@ public class GiftCard extends Card {
         this.balance = initialBalance;
     }
 
+    public GiftCard(float paymentAmount, String userName, String cardNumber, float cardBalance) {
+        super(paymentAmount, userName, cardNumber);
+        this.balance = cardBalance;
+    }
+
     // Getters and Setters
     // -------------------------------------------------------------------------
     public float getBalance() {
