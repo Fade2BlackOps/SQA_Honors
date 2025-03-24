@@ -2,7 +2,7 @@ package classes;
 
 import enums.PAYMENT_TYPE;
 
-public class Payment {
+public abstract class Payment {
 
     // Private attributes for encapsulation
     // -------------------------------------------------------------------------
@@ -16,6 +16,11 @@ public class Payment {
     public Payment() {  
         this.paymentMethod = PAYMENT_TYPE.None; // Default to None
         this.amount = 0.0f; // Default amount
+    }
+
+    public Payment(float amount) { 
+        this.paymentMethod = PAYMENT_TYPE.None; // Default to None
+        this.amount = amount; // Set the amount
     }
 
     public Payment(int orderId, PAYMENT_TYPE paymentMethod, float amount) {
@@ -47,11 +52,6 @@ public class Payment {
      * 
      * @return true if payment is successful, false otherwise.
      */
-    public Payment processPayment(int orderId, PAYMENT_TYPE paymentMethod, float amount) {
-        System.out.println("Processing " + paymentMethod + " payment of $" + amount);
-        Payment payment = new Payment(orderId, paymentMethod, amount);
-        // Simulate payment processing logic here
-        return payment; // Assume payment is always successful for simplicity
-    }
-
+    public abstract Payment processPayment(int orderId, PAYMENT_TYPE paymentMethod, float amount);
+    
 }
