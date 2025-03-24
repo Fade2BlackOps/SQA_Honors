@@ -19,7 +19,7 @@ public class Publisher extends Person {
      */
     public void editBook(Book book) {
         System.out.println("Publisher " + getName() + " is editing a book.");
-        // book.openBook("edit"); // Open the book in edit mode
+        book.openBook(book.getFilePath()); // Open the book for editing
     }
 
     /**

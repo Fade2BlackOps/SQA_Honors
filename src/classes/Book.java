@@ -87,7 +87,7 @@ public class Book {
      * Simulates a Book being read.
      * This method can be called by a Person to read the book.
      */
-    public void openBook() {
+    public void openBook(String filePath) {
         System.out.println("Opening book: " + title + " by " + author);
 
         if (bookType == BOOK_TYPE.PHYSICAL) {
