@@ -6,8 +6,8 @@ import enums.BOOK_TYPE;
 import enums.GENRE;
 import org.junit.Before;
 import org.junit.Test;
-import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+
 
 public class AuthorTest {
 
@@ -21,13 +21,16 @@ public class AuthorTest {
     @Test
     public void testAuthorConstructor() {
         assertNotNull(author);
-        assertThat(author.getName(), is("John Doe"));
+        assertEquals("John Doe", author.getName());
+        assertEquals("123-456-7890", author.getPhoneNumber());
+        assertEquals("johndoe@example.com", author.getEmail());
+        assertEquals("123 Main St", author.getAddress());
     }
 
     @Test
     public void testSetName() {
         author.setName("Jane Doe");
-        assertThat(author.getName(), is("Jane Doe"));
+        assertEquals("Jane Doe", author.getName());
     }
 
     @Test
