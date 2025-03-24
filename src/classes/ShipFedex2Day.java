@@ -1,8 +1,6 @@
 package classes;
 
-import interfaces.ShippingChoice;
-
-public class ShipFedex2Day implements ShippingChoice {
+public class ShipFedex2Day extends ShipMethod {
 
     // Attributes
     // -------------------------------------------------------------------------
@@ -28,15 +26,5 @@ public class ShipFedex2Day implements ShippingChoice {
         // Here you would typically update the order status and notify the customer
         // return order_id; or smthn like that
     }
-
-    @Override
-    public float getShippingCost(String method) {
-        // Return the shipping cost for FedEx 2-Day
-        if ("FedEx 2-Day".equalsIgnoreCase(method)) {
-            return shippingCost;
-        }
-        return 0.0f; // Return 0 for other methods (or throw an exception if needed)
-    } 
-    
 
 }

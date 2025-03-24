@@ -1,8 +1,6 @@
 package classes;
 
-import interfaces.ShippingChoice;
-
-public class ShipUSPSStandardFree implements ShippingChoice {
+public class ShipUSPSStandardFree extends ShipMethod {
 
     // Attributes
     // -------------------------------------------------------------------------
@@ -30,15 +28,5 @@ public class ShipUSPSStandardFree implements ShippingChoice {
         // Here you would typically update the order status and notify the customer
         // return order_id; or smthn like that
     }
-
-    @Override
-    public float getShippingCost(String method) {
-        // Return the shipping cost for USPS Standard Free
-        if ("USPS Standard Free".equalsIgnoreCase(method)) {
-            return shippingCost;
-        }
-        return 0.0f; // Return 0 for other methods (or throw an exception if needed)
-    } 
-    
 
 }
