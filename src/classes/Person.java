@@ -1,6 +1,6 @@
 package classes;
 
-public class Person {
+public abstract class Person {
 
     // Private attributes for encapsulation
     // -------------------------------------------------------------------------
