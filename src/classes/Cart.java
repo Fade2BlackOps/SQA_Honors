@@ -110,5 +110,23 @@ public class Cart {
     public boolean isEmpty() {
         return items.isEmpty();
     }
+
+    /**
+     * Returns a string representation of the cart.
+     * @return A string representing the cart.
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cart for ").append(customer.getName()).append(":\n");
+        for (Map.Entry<Book, Integer> entry : items.entrySet()) {
+            Book book = entry.getKey();
+            int quantity = entry.getValue();
+            sb.append("ISBN: ").append(book.getIsbn())
+              .append(", Title: ").append(book.getTitle())
+              .append(", Quantity: ").append(quantity).append("\n");
+        }
+        sb.append("Total Price: $").append(totalPrice).append("\n");
+        return sb.toString();
+    }
     
 }

@@ -3,8 +3,6 @@ package classes;
 import dataTypes.Date;
 import enums.PAYMENT_TYPE;
 
-import java.util.Map;
-
 public class Order {
 
     // Attributes

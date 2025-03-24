@@ -32,6 +32,9 @@ public class Payment {
     public float getAmount() { return amount; }
     public void setAmount(float amount) { this.amount = amount; }
 
+    public int getOrderId() { return orderId; }
+    public void setOrderId(int orderId) { this.orderId = orderId; }
+
     // Methods
     // --------------
     
