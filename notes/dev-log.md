@@ -4,6 +4,7 @@
 
 ### Implementation Tasks
 
-- [ ] Create and define classes
+- [x] Create and define classes
+- [ ] Create automated unit tests
 - [ ] Build MySQL database
 - [ ] 
