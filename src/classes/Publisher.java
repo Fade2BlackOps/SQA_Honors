@@ -1,6 +1,9 @@
 package classes;
 
 public class Publisher extends Person {
+    private String name;
+
+    public static final Publisher NONE = new Publisher("None");
 
     // Constructors
     // -------
@@ -8,10 +11,23 @@ public class Publisher extends Person {
 
     public Publisher(String name, String phoneNumber, String email, String address) {
         super(name, phoneNumber, email, address);
+        this.name = name;
+    }
+
+    public Publisher(String name) {
+        this.name = name;
     }
 
     // Methods
     // ------------
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     /**
      * Simulates a Publisher editing a book

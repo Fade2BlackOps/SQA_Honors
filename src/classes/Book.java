@@ -12,8 +12,10 @@ public class Book {
     // -------------------------------------------------------------------------
     private String title;
     private String isbn;
-    private Author author;
-    private Publisher publisher;
+    private Author author = Author.NONE; // Default to NONE if no author is provided
+    // This ensures that the book always has a valid author reference
+    private Publisher publisher = Publisher.NONE; // Default to NONE if no publisher is provided
+    // This ensures that the book always has a valid publisher reference
     private int pageCount;
     private float price;
     private GENRE genre;
@@ -28,8 +30,10 @@ public class Book {
     public Book(String title, String isbn, Author author, Publisher publisher, int pageCount, float price, GENRE genre, String filePath) {
         this.title = title;
         this.isbn = isbn;
-        this.author = author;
-        this.publisher = publisher;
+        this.author = author != null ? author : Author.NONE; // Ensure author is not null
+        // Default to NONE if no author is provided
+        this.publisher = publisher != null ? publisher : Publisher.NONE; // Ensure publisher is not null
+        // Default to NONE if no publisher is provided
         this.pageCount = pageCount;
         this.price = price;
         this.genre = genre;
