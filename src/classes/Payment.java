@@ -11,7 +11,10 @@ public class Payment {
 
     // Constructors
     // ----------------------
-    public Payment() {}
+    public Payment() {  
+        this.paymentMethod = PAYMENT_TYPE.None; // Default to None
+        this.amount = 0.0f; // Default amount
+    }
 
     public Payment(PAYMENT_TYPE paymentMethod, float amount) {
         this.paymentMethod = paymentMethod;
