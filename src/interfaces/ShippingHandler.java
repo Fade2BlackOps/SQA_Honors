@@ -2,7 +2,7 @@ package interfaces;
 
 import enums.SHIPPING_CHOICE;
 
-public interface ShippingChoice {
+public interface ShippingHandler {
 
     /**
      * Simulates the process of shipping an order.
