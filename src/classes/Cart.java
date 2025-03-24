@@ -27,6 +27,13 @@ public class Cart {
     public void setCustomer(Customer customer) { this.customer = customer; }
 
     public Map<Book, Integer> getItems() { return items; }
+
+    public float getTotalPrice() { 
+        return calculateTotalPrice(); // Calculate total price when requested
+    }
+    public void setTotalPrice(float totalPrice) { 
+        this.totalPrice = totalPrice; 
+    }
     
     // Methods
     // --------------
@@ -94,6 +101,14 @@ public class Cart {
         items.clear();
         totalPrice = 0.00f;
         System.out.println("Cart has been cleared.");
+    }
+
+    /**
+     * Checks if the cart is empty.
+     * @return true if the cart is empty, false otherwise.
+     */
+    public boolean isEmpty() {
+        return items.isEmpty();
     }
     
 }
