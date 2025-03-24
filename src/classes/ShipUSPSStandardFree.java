@@ -1,15 +1,23 @@
 package classes;
 
+import enums.SHIPPING_CHOICE;
+
 public class ShipUSPSStandardFree extends ShipMethod {
 
     // Attributes
     // -------------------------------------------------------------------------
     private final float shippingCost = 0.00f; // Fixed shipping cost for USPS Standard Free
-
+    private final SHIPPING_CHOICE shippingChoice = SHIPPING_CHOICE.USPS_STANDARD_FREE; // Shipping choice enum value
 
     // Getters and Setters
     // -------------------------------------------------------------------------
-    // No getters and setters needed for this class as we are using a fixed shipping cost
+    public float getShippingCost() {
+        return shippingCost;
+    }
+
+    public String getShippingChoice() {
+        return shippingChoice.toString(); // Return the string representation of the shipping choice
+    }
 
 
     // Methods

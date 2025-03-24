@@ -1,16 +1,22 @@
 package classes;
 
 import interfaces.ShippingHandler;
+import enums.SHIPPING_CHOICE;
 
 public abstract class ShipMethod implements ShippingHandler {
     // Attributes
     // -------------------------------------------------------------------------
     protected float shippingCost; // Variable to hold the shipping cost
+    protected SHIPPING_CHOICE shippingChoice; // Variable to hold the shipping choice
 
     // Getters and Setters
     // -------------------------------------------------------------------------
     public float getShippingCost() {
         return shippingCost;
+    }
+
+    public String getShippingChoice() {
+        return shippingChoice.toString(); // Return the string representation of the shipping choice
     }
 
     // Methods
