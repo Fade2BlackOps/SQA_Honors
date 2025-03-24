@@ -14,7 +14,7 @@ public interface ShippingHandler {
     /**
      * Simulates a shipping cost calculation based on the chosen method.
      * 
-     * @param method the shipping method chosen
+     * @param shippingMethod the shipping method chosen
      * 
      * @return the calculated shipping cost
      */
