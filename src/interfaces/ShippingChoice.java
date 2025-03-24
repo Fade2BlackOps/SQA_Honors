@@ -1,5 +1,7 @@
 package interfaces;
 
+import enums.SHIPPING_CHOICE;
+
 public interface ShippingChoice {
 
     /**
@@ -16,5 +18,5 @@ public interface ShippingChoice {
      * 
      * @return the calculated shipping cost
      */
-    float getShippingCost(String method); // TODO: // Change to enum for shipping methods
+    float getShippingCost(SHIPPING_CHOICE shippingMethod);
 }
