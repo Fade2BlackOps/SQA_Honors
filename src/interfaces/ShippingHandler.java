@@ -1,7 +1,5 @@
 package interfaces;
 
-import enums.SHIPPING_CHOICE;
-
 public interface ShippingHandler {
 
     /**
@@ -11,12 +9,4 @@ public interface ShippingHandler {
      */
     void shipOrder();
 
-    /**
-     * Simulates a shipping cost calculation based on the chosen method.
-     * 
-     * @param shippingMethod the shipping method chosen
-     * 
-     * @return the calculated shipping cost
-     */
-    float getShippingCost(SHIPPING_CHOICE shippingMethod);
 }
