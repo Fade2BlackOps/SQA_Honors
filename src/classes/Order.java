@@ -1,6 +1,8 @@
 package classes;
 
 import dataTypes.Date;
+import enums.PAYMENT_TYPE;
+
 import java.util.Map;
 
 public class Order {
@@ -18,6 +20,7 @@ public class Order {
     private float tax = 0.00f; // Default tax value
     private float total;
     private Map<Book, Integer> cartItems;
+    private PAYMENT_TYPE paymentType = PAYMENT_TYPE.None; // Default payment type
     private Payment payment;
 
 
@@ -108,6 +111,22 @@ public class Order {
     // Methods
     // -----------------------------
     
-    
+    private void calculateTotals() {
+        if (shippingChoice != null) {
+            setTax(subtotal, shippingChoice); // Calculate tax based on subtotal and shipping method
+            setTotal(subtotal, shippingChoice, tax); // Calculate total based on subtotal, shipping cost, and tax
+        }
+    }
+
+    /**
+     * Processes the order by calculating totals and updating the payment status.
+     */
+    private Payment processOrderPayment() {
+        calculateTotals(); // Calculate totals before processing payment
+        if (payment != null) {
+            payment.processPayment(orderId, paymentType, total); // Process payment with the total amount
+        }
+        return payment; // Return the payment object for further processing or confirmation
+    }
 
 }

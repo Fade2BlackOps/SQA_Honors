@@ -6,6 +6,8 @@ public class Payment {
 
     // Private attributes for encapsulation
     // -------------------------------------------------------------------------
+    private int orderId; // Unique identifier for the order associated with this payment
+    // This can be used to link the payment to a specific order
     private PAYMENT_TYPE paymentMethod;
     private float amount;
 
@@ -16,7 +18,8 @@ public class Payment {
         this.amount = 0.0f; // Default amount
     }
 
-    public Payment(PAYMENT_TYPE paymentMethod, float amount) {
+    public Payment(int orderId, PAYMENT_TYPE paymentMethod, float amount) {
+        this.orderId = orderId; // Set the order ID
         this.paymentMethod = paymentMethod;
         this.amount = amount;
     }
@@ -34,12 +37,18 @@ public class Payment {
     
     /**
      * Processes the payment.
+     * This method simulates the payment processing logic.
+     * 
+     * @param paymentMethod the method of payment (e.g., credit card, PayPal)
+     * @param amount the amount to be charged
+     * 
      * @return true if payment is successful, false otherwise.
      */
-    public boolean processPayment() {
+    public Payment processPayment(int orderId, PAYMENT_TYPE paymentMethod, float amount) {
         System.out.println("Processing " + paymentMethod + " payment of $" + amount);
+        Payment payment = new Payment(orderId, paymentMethod, amount);
         // Simulate payment processing logic here
-        return true; // Assume payment is always successful for simplicity
+        return payment; // Assume payment is always successful for simplicity
     }
 
 }
