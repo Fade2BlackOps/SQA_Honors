@@ -1,7 +1,6 @@
 package classes;
 
 import dataTypes.Date;
-import interfaces.ShippingHandler;
 import java.util.Map;
 
 public class Order {
@@ -14,7 +13,7 @@ public class Order {
     private int orderId;
     private Person customer;
     private Date orderDate;
-    private ShippingHandler shippingChoice;
+    private ShipMethod shippingChoice;
     private float subtotal;
     private float tax = 0.00f; // Default tax value
     private float total;
@@ -54,11 +53,11 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public ShippingHandler getShippingChoice() {
-        return shippingChoice;
+    public String getShippingChoice() {
+        return shippingChoice.getShippingChoice();
     }
 
-    public void setShippingChoice(ShippingHandler shippingChoice) {
+    public void setShippingChoice(ShipMethod shippingChoice) {
         this.shippingChoice = shippingChoice;
     }
 
@@ -74,8 +73,9 @@ public class Order {
         return tax;
     }
 
-    private void setTax(float subtotal, float shippingCost) {
-        this.tax = Math.round(subtotal * DEFAULT_TAX_RATE); // Calculate tax based on subtotal and default tax rate
+    private void setTax(float subtotal, ShipMethod shippingMethod) {
+        float preTax = subtotal + shippingMethod.getShippingCost(); // Calculate pre-tax total
+        this.tax = Math.round(preTax * DEFAULT_TAX_RATE); // Calculate tax based on subtotal and default tax rate
         // FIXME: Make sure this is rounded to 2 decimal places
     }
 
@@ -83,8 +83,8 @@ public class Order {
         return total;
     }
 
-    private void setTotal(float subtotal, float tax) {
-        this.total = Math.round(subtotal + tax); // Calculate total as subtotal plus tax
+    private void setTotal(float subtotal, ShipMethod shippingMethod, float tax) {
+        this.total = Math.round(subtotal + shippingMethod.getShippingCost() + tax);
         // FIXME: Make sure this is rounded to 2 decimal places
     }
 
@@ -108,6 +108,6 @@ public class Order {
     // Methods
     // -----------------------------
     
-
+    
 
 }
