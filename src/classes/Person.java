@@ -4,6 +4,9 @@ public class Person {
 
     // Private attributes for encapsulation
     // -------------------------------------------------------------------------
+    private static int idCounter = 0; // Static counter to generate unique IDs for each Person
+    // This is a static variable that will be shared across all instances of Person
+    private int id;
     private String name;
     private String phoneNumber;
     private String email;
@@ -11,9 +14,10 @@ public class Person {
 
     // Constructors
     // -------------------------------------------------------------------------
-    public Person() {} // empty parameterless constructor
+    public Person() { this.id = generateId(); } // Default constructor
 
     public Person(String name, String phoneNumber, String email, String address) {
+        this.id = generateId(); // Generate a unique ID for this instance
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -22,6 +26,7 @@ public class Person {
 
     // Getters
     // -------------------------------------------------------------------------
+    public int getId() { return id; }
     public String getName() {return name;}
     public String getPhoneNumber() {return phoneNumber;}
     public String getEmail() {return email;}
@@ -38,6 +43,10 @@ public class Person {
     // Methods
     // -------------------------------------------------------------------------
 
+    private int generateId() { 
+        return ++idCounter; // Increment the static counter and return the new value as the ID
+    }
+    
     /**
      * A Person can call to a Book to read its contents.
      *
