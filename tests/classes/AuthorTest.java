@@ -4,20 +4,20 @@ import classes.Author;
 import classes.Book;
 import enums.BOOK_TYPE;
 import enums.GENRE;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import org.testng.annotations.*;
+import static org.testng.Assert.*;
 
 public class AuthorTest {
 
     private Author author;
 
-    @Before
+    @BeforeTest
     public void setUp() {
         author = new Author("John Doe", "123-456-7890", "johndoe@example.com", "123 Main St");
     }
 
-    @Test
+    @Test(priority = 1)
     public void testAuthorConstructor() {
         assertNotNull(author);
         assertEquals("John Doe", author.getName());
@@ -26,13 +26,13 @@ public class AuthorTest {
         assertEquals("123 Main St", author.getAddress());
     }
 
-    @Test
+    @Test(priority = 2)
     public void testSetName() {
         author.setName("Jane Doe");
         assertEquals("Jane Doe", author.getName());
     }
 
-    @Test
+    @Test(priority = 3)
     public void testWriteBook() {
         Book book = author.writeBook();
         assertNotNull(book);
@@ -46,7 +46,7 @@ public class AuthorTest {
         assertEquals(BOOK_TYPE.DIGITAL, book.getBookType());
     }
 
-    @Test
+    @Test(priority = 4)
     public void testReviseBook() {
         Book book = author.writeBook();
         author.reviseBook(book);
