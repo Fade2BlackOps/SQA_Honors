@@ -12,8 +12,8 @@ public class EBook extends Book {
     // ----------------------
     public EBook() {}
 
-    public EBook(String title, String isbn, String author, String publisher, int pageCount, float price, GENRE genre, String fileFormat, float fileSize) {
-        super(title, isbn, author, publisher, pageCount, price, genre);
+    public EBook(String title, String isbn, Author author, Publisher publisher, int pageCount, float price, GENRE genre, String filePath, String fileFormat, float fileSize) {
+        super(title, isbn, author, publisher, pageCount, price, genre, filePath);
         this.fileFormat = fileFormat;
         this.fileSize = fileSize;
     }

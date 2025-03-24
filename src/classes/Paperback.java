@@ -12,7 +12,7 @@ public class Paperback extends Book {
     // ----------------------
     public Paperback() {}
 
-    public Paperback(String title, String isbn, String author, String publisher, int pageCount, float price, GENRE genre, String coverType, float weight) {
+    public Paperback(String title, String isbn, Author author, Publisher publisher, int pageCount, float price, GENRE genre, String coverType, float weight) {
         super(title, isbn, author, publisher, pageCount, price, genre);
         this.coverType = coverType;
         this.weight = weight;
