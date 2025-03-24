@@ -43,6 +43,7 @@ public class Cart {
         } else {
             System.out.println("Quantity must be greater than zero.");
         }
+        totalPrice = calculateTotalPrice(); // Update total price after adding
     }
 
     /**
@@ -56,6 +57,7 @@ public class Cart {
         } else {
             System.out.println("Book with ISBN " + book.getIsbn() + " not found in cart.");
         }
+        totalPrice = calculateTotalPrice(); // Update total price after removing
     }
 
     /**
@@ -82,7 +84,7 @@ public class Cart {
             int quantity = entry.getValue();
             System.out.println("ISBN: " + book.getIsbn() + ", Title: " + book.getTitle() + ", Quantity: " + quantity);
         }
-        System.out.println("Total Price: $" + calculateTotalPrice());
+        System.out.println("Total Price: $" + totalPrice);
     }
 
     /**
