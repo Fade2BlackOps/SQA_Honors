@@ -44,10 +44,9 @@ public class Author extends Person {
     public Book writeBook() {
         System.out.println("Author" + getName() + "is writing a book.");
         Book book = new Book();
-        // TODO: Fill in the rest of the logic for a book being written.
         try {
             // Create a new book file
-            String bookFileName = getName().replaceAll("\\s+", "_") + "_Book.txt";
+            String bookFileName = getName().replaceAll("\\s+", "_") + "_Book.docx";
             File bookFile = new File(bookFileName);
             if (bookFile.createNewFile()) {
                 System.out.println("Book file created: " + bookFile.getAbsolutePath());

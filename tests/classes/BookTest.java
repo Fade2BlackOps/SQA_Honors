@@ -19,7 +19,7 @@ public class BookTest {
     public void setUp() {
         author = new Author("John Doe", "123-456-7890", "johndoe@example.com", "123 Main St");
         publisher = new Publisher("Test Publisher", "456-789-1234", "publisher@example.com", "456 Publisher St");
-        book = new Book("Test Title", "1234567890", author, publisher, 200, 29.99f, GENRE.FICTION, "test/path/to/book.txt");
+        book = new Book("Test Title", "1234567890", author, publisher, 200, 29.99f, GENRE.FICTION, "test/path/to/book.docx");
     }
 
     @Test(priority = 1)
@@ -33,7 +33,7 @@ public class BookTest {
         assertEquals(book.getPrice(), 29.99f, 0.01);
         assertEquals(book.getGenre(), GENRE.FICTION);
         assertEquals(book.getBookType(), BOOK_TYPE.DIGITAL);
-        assertEquals(book.getFilePath(), "test/path/to/book.txt");
+        assertEquals(book.getFilePath(), "test/path/to/book.docx");
     }
 
     @Test(priority = 2)
@@ -88,26 +88,26 @@ public class BookTest {
 
     @Test(priority = 10)
     public void testSetFilePath() {
-        book.setFilePath("new/path/to/book.txt");
-        assertEquals(book.getFilePath(), "new/path/to/book.txt");
+        book.setFilePath("new/path/to/book.docx");
+        assertEquals(book.getFilePath(), "new/path/to/book.docx");
     }
 
     @Test(priority = 11)
     public void testOpenBookWithValidFilePath() {
         book.setBookType(BOOK_TYPE.DIGITAL);
-        book.setFilePath("test/path/to/book.txt");
+        book.setFilePath("test/path/to/book.docx");
         // Simulate opening the book (this will print messages to the console)
         book.openBook(book.getFilePath());
-        assertEquals(book.getFilePath(), "test/path/to/book.txt");
+        assertEquals(book.getFilePath(), "test/path/to/book.docx");
     }
 
     @Test(priority = 12)
     public void testOpenBookWithInvalidFilePath() {
         book.setBookType(BOOK_TYPE.DIGITAL);
-        book.setFilePath("invalid/path/to/book.txt");
+        book.setFilePath("invalid/path/to/book.docx");
         // Simulate opening the book with an invalid path (this will print error messages to the console)
         book.openBook(book.getFilePath());
-        assertEquals(book.getFilePath(), "invalid/path/to/book.txt");
+        assertEquals(book.getFilePath(), "invalid/path/to/book.docx");
     }
 
     @Test(priority = 13)

@@ -37,8 +37,8 @@ public class AuthorTest {
         Book book = author.writeBook();
         assertNotNull(book);
         assertNotNull(book.getFilePath());
-        assert(book.getTitle().equals("Untitled Book by John Doe"));
-        assertEquals("Untitled Book by John Doe", book.getTitle());
+        assert(book.getTitle().equals("Untitled Book by Jane Doe"));
+        assertEquals("Untitled Book by Jane Doe", book.getTitle());
         assertEquals(author, book.getAuthor());
         assertEquals(100, book.getPageCount());
         assertEquals(19.99f, book.getPrice(), 0.01);
