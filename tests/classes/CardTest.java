@@ -79,6 +79,7 @@ public class CardTest {
 
     @Test(priority = 7)
     public void testGetMaskedCardNumber() {
+        card.setCardNumber("1234-5678-9012-7654");
         assertEquals(card.getMaskedCardNumber(), "****-****-****-7654");
         card.setCardNumber("1234");
         assertEquals(card.getMaskedCardNumber(), "1234"); // Too short to mask
