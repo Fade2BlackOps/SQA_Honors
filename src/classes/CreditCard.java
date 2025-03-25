@@ -20,6 +20,12 @@ public class CreditCard extends Card {
         this.securityCode = securityCode;
     }
 
+    public String getProcessingNetwork() {
+        return processingNetwork;
+    }
+
+
+
     @Override
     public Payment processPayment(int orderId, PAYMENT_TYPE paymentMethod, float amount) {
         System.out.println("Processing " + paymentMethod + " payment of $" + amount);

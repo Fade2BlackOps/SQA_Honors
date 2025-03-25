@@ -2,7 +2,7 @@ package classes;
 
 import enums.GENRE;
 
-public class Paperback extends Physical_Book {
+public class Paperback extends PhysicalBook {
     // Private attributes for encapsulation
     // -------------------------------------------------------------------------
     private String coverType; // e.g., Softcover, Hardcover

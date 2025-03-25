@@ -2,7 +2,7 @@ package classes;
 
 import enums.GENRE;
 
-public abstract class Physical_Book extends Book {
+public abstract class PhysicalBook extends Book {
     // Private attributes for encapsulation
     // -------------------------------------------------------------------------
     private String coverType; // e.g., Softcover, Hardcover
@@ -10,9 +10,9 @@ public abstract class Physical_Book extends Book {
 
     // Constructors
     // ----------------------
-    public Physical_Book() {}
+    public PhysicalBook() {}
 
-    public Physical_Book(String title, String isbn, Author author, Publisher publisher, int pageCount, float price, GENRE genre, String coverType, float weight) {
+    public PhysicalBook(String title, String isbn, Author author, Publisher publisher, int pageCount, float price, GENRE genre, String coverType, float weight) {
         super(title, isbn, author, publisher, pageCount, price, genre);
         this.coverType = coverType;
         this.weight = weight;
