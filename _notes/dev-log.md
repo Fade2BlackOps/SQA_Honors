@@ -5,9 +5,11 @@
 ### Implementation Tasks
 
 - [x] Create and define classes
-- [ ] Create automated unit tests
+- [x] Create automated unit tests
+- [ ] Debug unit tests
+  - Running each unit individually seems to be working, but together breaks everything :/
 - [ ] Build MySQL database
-- [ ] 
+- [ ] Write main menu and usage loop
 
 ## Directory Details:
 
