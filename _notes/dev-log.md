@@ -6,6 +6,7 @@
 
 - [x] Create and define classes
 - [x] Create automated unit tests
+- [ ] Re-organize classes in directory structure
 - [ ] Debug unit tests
   - Running each unit individually seems to be working, but together breaks everything :/
 - [ ] Build MySQL database
