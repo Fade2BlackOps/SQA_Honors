@@ -1,4 +1,4 @@
-package tests.classes;
+package tests;
 
 import classes.Customer;
 import classes.Book;

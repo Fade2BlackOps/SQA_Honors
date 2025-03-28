@@ -1,4 +1,4 @@
-package tests.classes;
+package tests;
 
 import classes.ShipUSPSStandardFree;
 import enums.SHIPPING_CHOICE;

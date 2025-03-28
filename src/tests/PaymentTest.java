@@ -1,4 +1,4 @@
-package tests.classes;
+package tests;
 
 import classes.Payment;
 import enums.PAYMENT_TYPE;

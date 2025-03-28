@@ -1,4 +1,4 @@
-package tests.classes;
+package tests;
 
 import classes.ShipFedex2Day;
 import enums.SHIPPING_CHOICE;

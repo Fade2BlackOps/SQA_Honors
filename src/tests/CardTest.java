@@ -1,4 +1,4 @@
-package tests.classes;
+package tests;
 
 import classes.Card;
 import classes.Payment;
