@@ -8,6 +8,7 @@ import classes.CreditCard;
 import classes.DebitCard;
 import classes.GiftCard;
 import classes.Payment;
+import enums.PAYMENT_TYPE;
 
 public class Main {
     private static Map<String, Integer> inventory = new HashMap<>();
@@ -78,7 +79,7 @@ public class Main {
     }
 
     private static void processPayment() {
-        System.out.print("Enter amount to pay: ");
+        System.out.print("Enter amount to pay: $");
         float amount = scanner.nextFloat();
         scanner.nextLine(); // Consume newline
 
@@ -93,38 +94,40 @@ public class Main {
         scanner.nextLine(); // Consume newline
 
         Payment payment;
+        PAYMENT_TYPE paymentType;
         switch (paymentChoice) {
             case 1:
+                paymentType = PAYMENT_TYPE.CASH;
                 payment = new Cash(amount);
                 break;
             case 2:
+                paymentType = PAYMENT_TYPE.CREDIT_CARD;
                 System.out.print("Enter cardholder name: ");
                 String creditName = scanner.nextLine();
-                System.out.print("Enter card number: ");
-                int creditNumber = scanner.nextInt();
-                scanner.nextLine();
+                System.out.print("Enter card number as this format (1234-5678-9012-3456): ");
+                String creditNumber = scanner.nextLine();
                 System.out.print("Enter processing network: ");
                 String network = scanner.nextLine();
-                System.out.print("Enter security code: ");
+                System.out.print("Enter 3-digit security code: ");
                 int securityCode = scanner.nextInt();
                 payment = new CreditCard(amount, creditName, String.valueOf(creditNumber), network, securityCode);
                 break;
             case 3:
+                paymentType = PAYMENT_TYPE.DEBIT_CARD;
                 System.out.print("Enter cardholder name: ");
                 String debitName = scanner.nextLine();
-                System.out.print("Enter card number: ");
-                int debitNumber = scanner.nextInt();
-                scanner.nextLine();
+                System.out.print("Enter card number as this format (1234-5678-9012-3456): ");
+                String debitNumber = scanner.nextLine();
                 System.out.print("Enter bank name: ");
                 String bank = scanner.nextLine();
                 payment = new DebitCard(amount, debitName, String.valueOf(debitNumber), bank);
                 break;
             case 4:
+                paymentType = PAYMENT_TYPE.GIFT_CARD;
                 System.out.print("Enter cardholder name: ");
                 String giftName = scanner.nextLine();
                 System.out.print("Enter card number: ");
-                int giftNumber = scanner.nextInt();
-                scanner.nextLine();
+                String giftNumber = scanner.nextLine();
                 System.out.print("Enter gift card balance: ");
                 float balance = scanner.nextFloat();
                 payment = new GiftCard(amount, giftName, String.valueOf(giftNumber), balance);
@@ -134,6 +137,6 @@ public class Main {
                 return;
         }
         
-        payment.processPayment(paymentChoice, null, paymentChoice);
+        payment.processPayment(paymentChoice, paymentType, amount);
     }
 }
