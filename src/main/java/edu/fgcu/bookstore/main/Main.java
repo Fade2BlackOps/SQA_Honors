@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import classes.Cash;
 import classes.CreditCard;
 import classes.DebitCard;
@@ -15,6 +20,21 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Database connection setup (example using SQLite)
+        String url_database = "jdbc:sqlite:src/main/sql/bookstore.db";
+        try (Connection conn = DriverManager.getConnection(url_database)) {
+            if (conn != null) {
+                Statement stmt = conn.createStatement();
+                String sql = "CREATE TABLE IF NOT EXISTS books " +
+                             "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                             " title TEXT NOT NULL, " +
+                             " quantity INTEGER NOT NULL)";
+                stmt.execute(sql);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
         while (true) {
             System.out.println("\n=== Bookstore System ===");
             System.out.println("1. View Inventory");
