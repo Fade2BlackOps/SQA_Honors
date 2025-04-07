@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -21,18 +24,29 @@ public class Main {
 
     public static void main(String[] args) {
         // Database connection setup (example using SQLite)
+        Statement stmt = conn.createStatement();
+        stmt.execute("PRAGMA foreign_keys = ON");
         String url_database = "jdbc:sqlite:src/main/sql/bookstore.db";
+        String sqlFilePath = "src/main/sql/schema.sql";
+
         try (Connection conn = DriverManager.getConnection(url_database)) {
             if (conn != null) {
+                String sqlContent = new String(Files.readAllBytes(Paths.get(sqlFilePath)));
+                
                 Statement stmt = conn.createStatement();
-                String sql = "CREATE TABLE IF NOT EXISTS books " +
-                             "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                             " title TEXT NOT NULL, " +
-                             " quantity INTEGER NOT NULL)";
-                stmt.execute(sql);
+
+                // Split on semicolon to handle multiple SQL statements
+                for (String sql : sqlContent.split(";")) {
+                    sql = sql.trim();
+                    if (!sql.isEmpty()) {
+                        stmt.execute(sql);
+                    }
+                }
+
+                System.out.println("SQL schema loaded successfully.");
             }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error loading SQL schema: " + e.getMessage());
         }
 
         while (true) {

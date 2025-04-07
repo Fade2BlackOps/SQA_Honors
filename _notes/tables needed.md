@@ -1,0 +1,74 @@
+- Customers:
+	- int ID
+	- text Name
+	- text Email
+	- text Address
+	- text Phone
+- Authors:
+	- int ID
+	- text Name
+	- text Email
+	- text Address
+	- text Phone
+- Publishers:
+	- int ID
+	- text Name
+	- text Email
+	- text Address
+	- text Phone
+- Logins:
+	- int PersonID
+	- text Email
+	- text Password
+- Stores:
+	- int ID
+	- text Name
+	- text Address
+	- text Phone
+	- text businessLicense
+- Store_Items:
+	- int StoreID
+	- int ItemID
+- Books:
+	- int ID
+	- text Title
+	- text ISBN
+	- int AuthorID
+	- int PublisherID
+	- int PageCount
+	- float Price
+	- text Genre
+	- text BookType
+	- text FilePath
+- Orders:
+	- int ID
+	- int CustomerID
+	- date Date
+	- text ShippingMethod
+	- float TotalCost
+	- int PaymentID
+- Customer_Payments:
+	- int ID
+	- int CustomerID
+	- int PaymentID
+- Payments:
+	- int ID
+	- date Date
+	- int DebitID
+	- int CreditID
+	- int GiftID
+	- float TotalAmount
+- Cards:
+	- int ID
+	- text Number
+	- text HolderName
+	- int ExpireMonth
+	- int ExpireYear
+	- text CVV
+	- int CustomerID
+- GiftCards:
+	- int ID
+	- text Number
+	- float Balance
+
+This is great so far! Yes, please add an order items table, I totally forgot about that. And yes, please simulate login and check out behavior in Java code. I want users to be able to select if they are logging in as an author, customer, or publisher. Each should sign in with an email address and password, which should query the table for logins that match the email address and password provided; if the combination is in the table the user can log in.

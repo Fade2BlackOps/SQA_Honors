@@ -1,4 +1,4 @@
-package dataTypes;
+package edu.fgcu.bookstore.dataTypes;
 
 public class Date {
     private int month;
