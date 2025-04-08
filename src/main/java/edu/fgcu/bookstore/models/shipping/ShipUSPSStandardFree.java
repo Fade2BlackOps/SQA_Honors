@@ -1,6 +1,6 @@
 package edu.fgcu.bookstore.models.shipping;
 
-import enums.SHIPPING_CHOICE;
+import edu.fgcu.bookstore.enums.SHIPPING_CHOICE;
 
 public class ShipUSPSStandardFree extends ShipMethod {
 
@@ -8,6 +8,14 @@ public class ShipUSPSStandardFree extends ShipMethod {
     // -------------------------------------------------------------------------
     private final float shippingCost = 0.00f; // Fixed shipping cost for USPS Standard Free
     private final SHIPPING_CHOICE shippingChoice = SHIPPING_CHOICE.USPS_STANDARD_FREE; // Shipping choice enum value
+
+    public ShipUSPSStandardFree(String string, float f) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public ShipUSPSStandardFree() {
+        //TODO Auto-generated constructor stub
+    }
 
     // Getters and Setters
     // -------------------------------------------------------------------------

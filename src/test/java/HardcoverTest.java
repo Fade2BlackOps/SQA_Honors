@@ -1,9 +1,5 @@
-package tests;
-
-import classes.Hardcover;
-import classes.Author;
-import classes.Publisher;
-import enums.GENRE;
+import edu.fgcu.bookstore.models.*;
+import edu.fgcu.bookstore.enums.*;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;

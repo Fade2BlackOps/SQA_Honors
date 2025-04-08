@@ -1,7 +1,7 @@
 package edu.fgcu.bookstore.models.shipping;
 
-import interfaces.ShippingHandler;
-import enums.SHIPPING_CHOICE;
+import edu.fgcu.bookstore.interfaces.ShippingHandler;
+import edu.fgcu.bookstore.enums.SHIPPING_CHOICE;
 
 public abstract class ShipMethod implements ShippingHandler {
     // Attributes

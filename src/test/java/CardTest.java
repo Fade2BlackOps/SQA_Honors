@@ -1,8 +1,5 @@
-package tests;
-
-import classes.Card;
-import classes.Payment;
-import enums.PAYMENT_TYPE;
+import edu.fgcu.bookstore.models.payment.*;
+import edu.fgcu.bookstore.enums.*;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;

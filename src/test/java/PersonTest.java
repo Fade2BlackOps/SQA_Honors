@@ -1,8 +1,5 @@
-package tests;
-
-import classes.Person;
-import classes.Book;
-import enums.GENRE;
+import edu.fgcu.bookstore.models.*;
+import edu.fgcu.bookstore.enums.*;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;

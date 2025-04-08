@@ -1,7 +1,5 @@
-package tests;
-
-import classes.ShipUSPSStandardFree;
-import enums.SHIPPING_CHOICE;
+import edu.fgcu.bookstore.models.shipping.*;
+import edu.fgcu.bookstore.enums.*;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;

@@ -12,30 +12,23 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import classes.Cash;
-import classes.CreditCard;
-import classes.DebitCard;
-import classes.GiftCard;
-import classes.Payment;
+import edu.fgcu.bookstore.models.payment.*;
 
 public class Main {
     private static Map<String, Integer> inventory = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Database connection setup (example using SQLite)
-        Statement stmt = conn.createStatement();
-        stmt.execute("PRAGMA foreign_keys = ON");
         String url_database = "jdbc:sqlite:src/main/sql/bookstore.db";
         String sqlFilePath = "src/main/sql/schema.sql";
 
         try (Connection conn = DriverManager.getConnection(url_database)) {
             if (conn != null) {
-                String sqlContent = new String(Files.readAllBytes(Paths.get(sqlFilePath)));
-                
                 Statement stmt = conn.createStatement();
+                stmt.execute("PRAGMA foreign_keys = ON");
 
-                // Split on semicolon to handle multiple SQL statements
+                String sqlContent = new String(Files.readAllBytes(Paths.get(sqlFilePath)));
+
                 for (String sql : sqlContent.split(";")) {
                     sql = sql.trim();
                     if (!sql.isEmpty()) {

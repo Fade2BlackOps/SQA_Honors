@@ -1,7 +1,10 @@
 package edu.fgcu.bookstore.models;
 
-import dataTypes.Date;
-import enums.PAYMENT_TYPE;
+import edu.fgcu.bookstore.dataTypes.Date;
+import edu.fgcu.bookstore.enums.*;
+import edu.fgcu.bookstore.models.payment.Payment;
+import edu.fgcu.bookstore.models.shipping.*;
+
 
 public class Order {
 

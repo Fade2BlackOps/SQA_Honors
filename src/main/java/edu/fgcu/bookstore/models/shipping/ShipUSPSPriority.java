@@ -1,6 +1,6 @@
 package edu.fgcu.bookstore.models.shipping;
 
-import enums.SHIPPING_CHOICE;
+import edu.fgcu.bookstore.enums.SHIPPING_CHOICE;
 
 public class ShipUSPSPriority extends ShipMethod {
 
