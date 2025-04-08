@@ -1,6 +1,10 @@
-import edu.fgcu.bookstore.models.*;
-import edu.fgcu.bookstore.enums.*;
 import edu.fgcu.bookstore.dataTypes.Date;
+import edu.fgcu.bookstore.enums.*;
+import edu.fgcu.bookstore.models.payment.Payment;
+import edu.fgcu.bookstore.models.shipping.*;
+import edu.fgcu.bookstore.models.*;
+import edu.fgcu.bookstore.models.Person;
+import edu.fgcu.bookstore.models.Cart;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
@@ -16,9 +20,9 @@ public class OrderTest {
 
     @BeforeTest
     public void setUp() {
-        customer = new Person("John Doe", "123-456-7890", "johndoe@example.com", "123 Main St");
+        customer = new Customer("John Doe", "123-456-7890", "johndoe@example.com", "123 Main St");
         cart = new Cart(customer);
-        shippingMethod = new ShipMethod("Standard Shipping", 5.99f);
+        shippingMethod = new ShipUSPSStandardFree("Standard Shipping", 5.99f);
         order = new Order(1, customer, new Date(2025, 3, 24));
         order.setShippingChoice(shippingMethod);
         order.setSubtotal(cart.getTotalPrice());
@@ -34,7 +38,7 @@ public class OrderTest {
 
     @Test(priority = 2)
     public void testSetShippingChoice() {
-        ShipMethod newShippingMethod = new ShipMethod("Express Shipping", 15.99f);
+        ShipMethod newShippingMethod = new Ship("Express Shipping", 15.99f);
         order.updateShippingChoice(newShippingMethod);
         assertEquals(order.getShippingChoice(), "Express Shipping", "Shipping choice should be updated correctly.");
     }

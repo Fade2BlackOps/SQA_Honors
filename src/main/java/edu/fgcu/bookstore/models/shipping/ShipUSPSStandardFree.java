@@ -9,6 +9,10 @@ public class ShipUSPSStandardFree extends ShipMethod {
     private final float shippingCost = 0.00f; // Fixed shipping cost for USPS Standard Free
     private final SHIPPING_CHOICE shippingChoice = SHIPPING_CHOICE.USPS_STANDARD_FREE; // Shipping choice enum value
 
+    public ShipUSPSStandardFree(String string, float f) {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getters and Setters
     // -------------------------------------------------------------------------
     public float getShippingCost() {

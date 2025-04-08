@@ -21,6 +21,10 @@ public class Cart {
         this.items = new HashMap<>();
     }
 
+    public Cart(Person customer2) {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getters and Setters
     // --------
     public Customer getCustomer() { return customer; }
