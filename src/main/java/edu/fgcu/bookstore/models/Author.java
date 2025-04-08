@@ -1,11 +1,11 @@
-package classes;
+package edu.fgcu.bookstore.models;
 
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 
-import enums.BOOK_TYPE;
-import enums.GENRE;
+import edu.fgcu.bookstore.enums.BOOK_TYPE;
+import edu.fgcu.bookstore.enums.GENRE;
 
 public class Author extends Person {
     private String name;

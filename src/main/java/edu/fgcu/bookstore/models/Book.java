@@ -1,7 +1,7 @@
 package edu.fgcu.bookstore.models;
 
-import enums.GENRE;
-import enums.BOOK_TYPE;
+import edu.fgcu.bookstore.enums.GENRE;
+import edu.fgcu.bookstore.enums.BOOK_TYPE;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;

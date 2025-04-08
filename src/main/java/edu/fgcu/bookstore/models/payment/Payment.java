@@ -1,6 +1,6 @@
 package edu.fgcu.bookstore.models.payment;
 
-import enums.PAYMENT_TYPE;
+import edu.fgcu.bookstore.enums.PAYMENT_TYPE;
 
 public abstract class Payment {
 

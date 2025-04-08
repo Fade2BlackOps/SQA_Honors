@@ -1,6 +1,6 @@
 package edu.fgcu.bookstore.models;
 
-import enums.GENRE;
+import edu.fgcu.bookstore.enums.GENRE;
 
 public abstract class PhysicalBook extends Book {
     // Private attributes for encapsulation
