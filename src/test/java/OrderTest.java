@@ -1,12 +1,6 @@
-package tests;
-
-import classes.Order;
-import classes.Person;
-import classes.Cart;
-import classes.ShipMethod;
-import classes.Payment;
-import enums.PAYMENT_TYPE;
-import dataTypes.Date;
+import edu.fgcu.bookstore.models.*;
+import edu.fgcu.bookstore.enums.*;
+import edu.fgcu.bookstore.dataTypes.Date;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
