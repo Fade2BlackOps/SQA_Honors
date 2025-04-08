@@ -13,6 +13,10 @@ public class ShipUSPSStandardFree extends ShipMethod {
         //TODO Auto-generated constructor stub
     }
 
+    public ShipUSPSStandardFree() {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getters and Setters
     // -------------------------------------------------------------------------
     public float getShippingCost() {
