@@ -24,11 +24,11 @@ The Bookstore Application is a Java-based project designed to manage and streaml
 ## Installation
 1. Clone the repository:
      ```bash
-     git clone https://github.com/your-username/bookstore-app.git
+     git clone https://github.com/your-username/SQA_Honors-Bookstore.git
      ```
 2. Navigate to the project directory:
      ```bash
-     cd bookstore-app
+     cd SQA_Honors-Bookstore
      ```
 3. Build the project using Maven or Gradle:
      ```bash
@@ -39,7 +39,7 @@ The Bookstore Application is a Java-based project designed to manage and streaml
 ## Usage
 1. Run the application:
      ```bash
-     java -jar target/bookstore-app.jar
+     java -jar target/SQA_Honors-Bookstore.jar
      ```
 2. Access the application through the GUI or command-line interface.
 
@@ -50,4 +50,4 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
-For questions or support, please contact [your-email@example.com].
+For questions or support, please contact [vti3@icloud.com].
