@@ -24,7 +24,7 @@ The Bookstore Application is a Java-based project designed to manage and streaml
 ## Installation
 1. Clone the repository:
      ```bash
-     git clone https://github.com/your-username/SQA_Honors-Bookstore.git
+     git clone https://github.com/Fade2BlackOps/SQA_Honors-Bookstore.git
      ```
 2. Navigate to the project directory:
      ```bash
